@@ -1,3 +1,3 @@
 # PyA
 
-Мои программы с курса Python advanced
+Мои программы с курса Python advance
