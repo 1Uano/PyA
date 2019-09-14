@@ -7,6 +7,11 @@ class Critter(object):
         self.hunger = hunger
         self.boredom = boredom
 
+    def __str__(self):
+        ans = 'Объект класса Critter\n'
+        ans += 'имя:' + self.name + '\n'
+        return ans
+
     def talk(self):
         print("Меня зовут" ,  self.name)
 
@@ -15,5 +20,5 @@ def main():
     crit1.talk()
     crit2 = Critter("Мурзик")
     crit2.talk()
-    print('Доступ к атрибуту - ' , crit1.name)
+    print(crit2)
 main()
