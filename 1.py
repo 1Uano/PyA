@@ -7,29 +7,45 @@ class Critter(object):
     def status():
         print("Общее число зверюшек", Critter.total)
     def __init__(self, name, hunger = 0, boredom = 0):
-        self.name = name
+        self.__name = name
         self.hunger = hunger
         self.boredom = boredom
         Critter.total +=1
 
     def __str__(self):
         ans = 'Объект класса Critter\n'
-        ans += 'имя:' + self.name + '\n'
+        ans += 'имя:' + self.name 
         return ans
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
+        if new_name == "":
+            print('Имя зверюшки не может быть пустой строкой')
+        else:
+            self.__name = new_name
+            print('Имя успешно не изменено.')
 
     def talk(self):
         print("Меня зовут" ,  self.name)
 
 def main():
-    print("Доступ к атрибуту класса Critter..total:", end=' ')
-    print(Critter.total)
-
     print('Создание зверюшек')
-    crit1 = Critter("Зверюшка1")
-    crit1 = Critter("Зверюшка2")
-    crit1 = Critter("Зверюшка3")
+    crit1 = Critter("Зверюшка1" , 100000000 , -1000000000)
+    crit2 = Critter("Зверюшка2")
 
     Critter.status()
-    print("Доступ к атрибуту класса через объект:", end=' ')
-    print(crit1.total)
+
+    crit1.name ="Бобик"
+    print('Имя зверушки:' , crit1.name)
+    
+    crit2.name =""
+    print('Имя зверушки:' , crit2.name)
+
+    print(crit1)
+    print('Голод: ' + str(crit1.hunger))
+    print('Настроение: ' + str(crit1.boredom))
 main()
