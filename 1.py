@@ -43,7 +43,7 @@ class Critter(object):
         else:
             m='Я звоню в ментуру'
         return m
-
+          
     def talk(self):
         print("Меня зовут" ,  self.name)
         self.__pass_time()
