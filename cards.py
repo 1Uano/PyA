@@ -68,7 +68,9 @@ class Deck(Hand):
                     top_card = self.cards[0]
                     self.give(top_card, hand)
                 else:
-                    print("Не могу больше сдавать: карты закончились!")
+                    print("Карты закончились! Достаю новую колоду!!")
+                    self.populate()
+                    self.shuffle()
 
 if __name__ == '__main__':
     print("Вы запустили модуль cards, а не импортирован его (import cards).")
